@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0d">
+<title>Zona Gamer Digital</title>
+<style>
+:root{--bg:#09090c;--panel:#15151b;--red:#ff2638;--red2:#b70f22;--text:#f7f7fa;--muted:#aaaab6;--line:#34343d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#251017 0,#09090c 48%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text)}
+.wrap{max-width:1050px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 20px}.brand{display:flex;align-items:center;gap:11px}.mark{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#ff3347,#8e0618);display:grid;place-items:center;font-size:28px;font-weight:1000;box-shadow:0 0 25px #ff263833}.brand strong{display:block;font-size:17px;letter-spacing:.4px}.brand small{color:var(--muted);letter-spacing:2px;font-size:10px}.tag{border:1px solid #5e2029;color:#ff9aa4;padding:7px 10px;border-radius:999px;font-size:11px}
+.hero{border:1px solid #49202a;border-radius:24px;padding:28px 22px;background:linear-gradient(120deg,#211016dd,#111116f5 62%);overflow:hidden;position:relative}.hero:after{content:"Z";position:absolute;right:8px;top:-60px;font-size:250px;font-weight:1000;color:#ff26380b;pointer-events:none}.eyebrow{color:#ff6573;font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(32px,7vw,58px);line-height:.98;margin:12px 0}.hero h1 span{color:var(--red)}.hero p{color:#c5c5ce;max-width:600px;line-height:1.6;margin-bottom:20px}.btn{border:0;border-radius:12px;padding:12px 16px;background:var(--red);color:white;font-weight:800;cursor:pointer;display:inline-block;text-decoration:none}.btn.secondary{background:#24242d;border:1px solid #454550}.notice{font-size:12px;color:#ffcf85;background:#2b2012;border:1px solid #62451e;padding:11px 13px;border-radius:12px;margin:15px 0 0;line-height:1.5}
+section{margin-top:28px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}.section-head h2{margin:0;font-size:23px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.games{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.game{background:linear-gradient(155deg,#1c1c24,#111116);border:1px solid var(--line);border-radius:18px;padding:17px;min-width:0}.game .emoji{font-size:30px}.game h3{margin:9px 0 5px;font-size:17px}.game p{margin:0 0 14px;color:var(--muted);font-size:12px;line-height:1.5}.game button{width:100%;font-size:13px}.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pack{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px}.pack strong{display:block;margin-bottom:6px}.pack .price{color:#ff6675;font-weight:900;font-size:18px}.pack small{display:block;color:var(--muted);margin:6px 0 12px;line-height:1.45}.pack button{width:100%;padding:10px}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{border:1px solid var(--line);border-radius:16px;padding:16px;background:#111116}.step b{color:var(--red);font-size:20px}.step p{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:0}
+footer{border-top:1px solid var(--line);margin-top:32px;padding:20px 0;color:var(--muted);font-size:12px;line-height:1.6}.modal-back{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modal{width:min(480px,100%);background:#17171e;border:1px solid #54212a;border-radius:20px;padding:20px;box-shadow:0 20px 70px #000}.modal h2{margin-top:0}.field{display:block;margin:12px 0}.field span{display:block;font-size:13px;color:#ccc;margin-bottom:6px}.field input,.field select{width:100%;padding:12px;border-radius:10px;border:1px solid #454550;background:#0d0d12;color:white;font:inherit}.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.summary{color:#ccc;font-size:13px;line-height:1.5}.toast{margin-top:12px;color:#b5f4c7;font-size:13px;display:none}
+@media(max-width:650px){.wrap{padding:13px}.tag{display:none}.games,.packages,.how{grid-template-columns:1fr}.game{display:grid;grid-template-columns:44px 1fr;gap:0 10px}.game .emoji{grid-row:span 2}.game h3{margin-top:2px}.game p{margin-bottom:10px}.game button{grid-column:1/-1}.hero{padding:24px 18px}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="mark">Z</div><div><strong>ZONA GAMER</strong><small>D I G I T A L</small></div></div>
+  <div class="tag">CATÁLOGO DEMOSTRATIVO</div>
+</header>
+<main>
+  <div class="hero">
+    <div class="eyebrow">Tu mundo gamer en un solo lugar</div>
+    <h1>RECARGAS <span>GAMER.</span><br>FÁCIL Y CLARO.</h1>
+    <p>Explora las secciones de tus juegos favoritos. Esta es la primera versión de tu tienda: todavía no procesa pagos ni entrega recargas automáticamente.</p>
+    <button class="btn" onclick="document.getElementById('juegos').scrollIntoView({behavior:'smooth'})">Explorar juegos ↓</button>
+    <div class="notice">Importante: los precios y las recargas reales se añadirán cuando confirmes un proveedor autorizado. No envíes dinero desde esta demo.</div>
+  </div>
+
+  <section id="juegos">
+    <div class="section-head"><div><h2>Elige tu juego</h2><p>Selecciona un juego para preparar una solicitud de recarga.</p></div></div>
+    <div class="games">
+      <article class="game"><div class="emoji">🔥</div><h3>Free Fire</h3><p>Diamantes y recargas disponibles, sujetos a proveedor autorizado.</p><button class="btn secondary" onclick="openOrder('Free Fire')">Ver recargas</button></article>
+      <article class="game"><div class="emoji">🎯</div><h3>Blood Strike</h3><p>Oro y paquetes digitales, sujetos a disponibilidad regional.</p><button class="btn secondary" onclick="openOrder('Blood Strike')">Ver recargas</button></article>
+      <article class="game"><div class="emoji">🧱</div><h3>Roblox</h3><p>Consultaremos opciones de productos permitidos y sus condiciones.</p><button class="btn secondary" onclick="openOrder('Roblox')">Ver opciones</button></article>
+    </div>
+  </section>
+
+  <section id="paquetes">
+    <div class="section-head"><div><h2>Paquetes disponibles</h2><p>Precios de referencia publicados por proveedores externos en Colombia. Confirma el precio final en su página antes de pagar.</p></div></div>
+    <h3>🔥 Free Fire — Diamantes</h3>
+    <div class="packages">
+      <article class="pack"><strong>110 diamantes</strong><div class="price">$4.200 COP</div><small>100 + 10 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>341 diamantes</strong><div class="price">$12.000 COP</div><small>310 + 31 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>572 diamantes</strong><div class="price">$19.600 COP</div><small>520 + 52 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>1.166 diamantes</strong><div class="price">$38.599 COP</div><small>1.060 + 106 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>2.398 diamantes</strong><div class="price">$76.800 COP</div><small>2.180 + 218 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>6.160 diamantes</strong><div class="price">$182.400 COP</div><small>5.600 + 560 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://app.codashop.com/es-co/free-fire" target="_blank" rel="noopener">Consultar / recargar</a></article>
+    </div>
+    <h3 style="margin-top:24px">🎯 Blood Strike — Oro</h3>
+    <div class="packages">
+      <article class="pack"><strong>105 de oro</strong><div class="price">$3.900 COP</div><small>100 + 5 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>320 de oro</strong><div class="price">$11.900 COP</div><small>300 + 20 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>540 de oro</strong><div class="price">$19.900 COP</div><small>500 + 40 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>1.100 de oro</strong><div class="price">$39.900 COP</div><small>1.000 + 100 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>2.260 de oro</strong><div class="price">$79.900 COP</div><small>2.000 + 260 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+      <article class="pack"><strong>5.800 de oro</strong><div class="price">$199.900 COP</div><small>5.000 + 800 de bono · Precio de referencia</small><a class="btn" style="text-align:center;width:100%" href="https://www.codashop.com/es-co/blood-strike" target="_blank" rel="noopener">Consultar / recargar</a></article>
+    </div>
+    <h3 style="margin-top:24px">🧱 Roblox — Robux</h3>
+    <div class="pack">
+      <strong>Consulta de opciones disponibles</strong>
+      <div class="price">Precio por confirmar</div>
+      <small>Esta tienda aún no vende Robux ni tarjetas de regalo. Revisa las opciones oficiales de Roblox y sus condiciones antes de comprar o revender productos.</small>
+      <a class="btn secondary" style="text-align:center;width:100%" href="https://www.roblox.com/upgrades/robux" target="_blank" rel="noopener">Consultar en Roblox</a>
+    </div>
+    <div class="notice">Aviso: Zona Gamer Digital es un prototipo independiente, no afiliado a los juegos ni a los proveedores enlazados. Los botones llevan a las páginas externas para consultar o comprar directamente. Esta web no recibe pagos, no vende recargas por cuenta propia y no obtiene comisión de esas compras.</div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><h2>Cómo funcionará</h2><p>La compra real se activará cuando estén listos los proveedores y pagos.</p></div></div>
+    <div class="how">
+      <div class="step"><b>01</b><h3>Elige</h3><p>Selecciona tu juego y el paquete que te interesa.</p></div>
+      <div class="step"><b>02</b><h3>Verifica</h3><p>Se confirmará precio, método de pago y disponibilidad antes de cobrar.</p></div>
+      <div class="step"><b>03</b><h3>Entrega</h3><p>La recarga se procesa solo mediante un proveedor autorizado y compatible.</p></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <strong style="color:#fff">Zona Gamer Digital</strong><br>
+  Prototipo gratuito · Colombia<br>
+  Esta página no está afiliada a Garena, Roblox ni Blood Strike. Las marcas y juegos pertenecen a sus respectivos titulares. No se aceptan pagos en esta versión.
+</footer>
+</div>
+<div class="modal-back" id="backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <h2 id="modalTitle">Solicitar recarga</h2>
+    <p class="summary" id="modalIntro">Selecciona una opción para preparar una consulta.</p>
+    <label class="field"><span>Juego</span><input id="game" readonly></label>
+    <label class="field"><span>Producto que te interesa</span><select id="product"><option>Quiero consultar paquetes disponibles</option><option>Paquete pequeño</option><option>Paquete mediano</option><option>Paquete grande</option></select></label>
+    <label class="field"><span>Tu ID de jugador (opcional; no pongas contraseñas)</span><input id="playerId" placeholder="ID de jugador, si corresponde"></label>
+    <p class="summary">Todavía no hay precios confirmados, pagos ni entrega automática. Este formulario solo sirve para probar el diseño.</p>
+    <div class="modal-actions"><button class="btn" onclick="prepareRequest()">Preparar solicitud</button><button class="btn secondary" onclick="closeOrder()">Cerrar</button></div>
+    <div class="toast" id="toast">Solicitud de demostración preparada. No se ha enviado ni cobrado nada.</div>
+  </div>
+</div>
+<script>
+function openOrder(game){document.getElementById('game').value=game;document.getElementById('modalTitle').textContent='Recargas de '+game;document.getElementById('toast').style.display='none';document.getElementById('backdrop').style.display='flex';}
+function closeOrder(){document.getElementById('backdrop').style.display='none'}
+function prepareRequest(){document.getElementById('toast').style.display='block'}
+document.getElementById('backdrop').addEventListener('click',function(e){if(e.target===this)closeOrder()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOrder()});
+</script>
+</body>
+</html>
